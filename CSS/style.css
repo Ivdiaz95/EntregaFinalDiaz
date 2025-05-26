@@ -1,0 +1,388 @@
+
+
+body {
+  padding-top: 70px;
+  font-family: Arial, sans-serif;
+  background: #1A1A1A; /* Color Principal (Gris muy oscuro) */
+  color: #F0F0F0; /* Color de Texto Principal */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body:has(.carrito.activo) main {
+    /* Ajusta este valor al width de tu .carrito */
+    margin-right: 35%;
+    transition: margin-right 0.3s ease-in-out;
+}
+
+header {
+    position: fixed; /* Hace que el header se quede fijo en la pantalla */
+    top: 0; /* Lo posiciona en la parte superior */
+    left: 0; /* Lo posiciona en la izquierda */
+    width: 100%; /* Asegura que ocupe todo el ancho de la ventana */
+    background-color: #1A1A1A; /* Color Principal */
+    color: #F0F0F0;
+    padding: 15px 20px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    z-index: 100; /* Asegura que esté por encima de otros elementos, pero por debajo del carrito lateral */
+    display: flex; /* Para alinear el título y el botón del carrito */
+    justify-content: space-between; /* Espacio entre el título y el botón */
+    align-items: center; /* Alineación vertical */
+    box-sizing: border-box; 
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  background: #00CED1; /* Color de Acento */
+  color: #1A1A1A; /* Texto oscuro en botón claro */
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Transición suave al hover */
+   
+}
+
+button:hover {
+    background: #00A3A5; /* Variante de Acento al hover */
+}
+ 
+/*PRODUCTOS CSS*/
+ 
+.productos {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+
+.producto {
+  background: #282828; /* Un gris un poco más claro que el fondo del body */
+  padding: 1rem;
+  border: 1px solid #444; /* Borde más sutil */
+  border-radius: 8px;
+  text-align: center;
+  color: #F0F0F0; /* Texto claro para productos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.producto img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 4px; /* Bordes redondeados para imágenes */
+
+}
+/*CARRITO:*/ 
+
+.carrito {
+    position: fixed;
+    right: -100%; /* O -100% si lo prefieres así en HTML */
+    top: 0;
+    width: 35%; /* O el ancho que prefieras */
+    height: 100%;
+    background: #282828; /* Fondo del carrito un poco más claro que el body */
+    border-left: 2px solid black;
+    padding: 1rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: #F0F0F0; /* Texto claro */
+}
+
+.carrito.activo {
+    right: 0;
+}
+
+body:has(.carrito.activo) main {
+    margin-right: 35%; /* Asegura que este valor coincida con el width del carrito */
+    transition: margin-right 0.3s ease-in-out;
+}
+
+/* Estilos para el div que contiene los items del carrito */
+#carrito-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding-right: 5px; /* Pequeño padding para evitar que el scrollbar se pegue */
+
+}
+/* Estilo para la barra de desplazamiento en webkit (Chrome, Safari) */
+#carrito-items::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+#carrito-items::-webkit-scrollbar-track {
+    background: #333; /* Fondo de la pista */
+    border-radius: 10px;
+}
+#carrito-items::-webkit-scrollbar-thumb {
+    background-color: #00CED1; /* Color del "pulgar" del scrollbar (Turquesa) */
+    border-radius: 10px;
+    border: 2px solid #333; /* Borde para que se vea flotante */
+}
+#carrito-items::-webkit-scrollbar-thumb:hover {
+    background-color: #00A3A5; /* Turquesa más oscuro al pasar el mouse */
+}
+
+
+/* Estilos para el ENCABEZADO de las columnas del carrito */
+.item-carrito-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px 80px 40px;
+    gap: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 0.8em;
+    color: #B0B0B0; /* Gris claro para los encabezados */
+}
+
+.item-carrito-header .header-controles { text-align: center; }
+.item-carrito-header .header-producto { text-align: left; }
+.item-carrito-header .header-precio-unidad { text-align: right; }
+.item-carrito-header .header-subtotal { text-align: right; }
+.item-carrito-header .header-eliminar { text-align: center; }
+
+
+/* Estilos para cada FILA de producto en el carrito */
+.item-carrito-fila {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px 80px 40px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #333;
+    font-size: 0.9em;
+    color: #F0F0F0; /* Texto claro para los ítems */
+}
+
+/* Contenedor de botones +, - y la cantidad (primera columna de la fila) */
+.controles-cantidad-prod {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.controles-cantidad-prod button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9em;
+    min-width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    box-shadow: none;
+}
+
+.controles-cantidad-prod button:hover {
+    background-color: #0056b3;
+}
+
+.controles-cantidad-prod .cantidad-display {
+    font-weight: bold;
+    text-align: center;
+    min-width: 20px;
+    color: #F0F0F0;  
+}
+
+
+
+.nombre-producto {
+    margin: 0;
+    font-weight: normal;
+    line-height: 1.2;
+
+    color: #F0F0F0; 
+    text-align: left;
+}
+
+.precio-unidad,
+.subtotal-producto {
+    text-align: right;
+    font-weight: bold;
+    color:#00CED1;
+}
+
+.eliminar-columna {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eliminar-columna .eliminar-item {
+    background-color: #DC3545; /* Rojo para vaciar */
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: bold;
+    min-width: unset;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eliminar-columna .eliminar-item:hover {
+    background: #C82333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/*Parte final del Carrito */
+
+.carrito-footer {
+    padding-top: 15px; /* Espacio superior para el footer */
+    border-top: 1px solid #444; /* Línea divisoria */
+    background: #282828; /* Mismo fondo que el carrito para que se vea continuo */
+    padding-bottom: 15px; /* Espacio inferior */
+    margin: 15px;
+
+}
+
+p#carrito-total {
+    text-align: right;
+    font-size: 1.4em; /* Un poco más grande para el total */
+    font-weight: bold;
+    color: #00CED1; /* Color de Acento Turquesa para el total */
+    margin-bottom: 15px; /* Espacio antes de los botones */
+    padding-right: 5px; /* Pequeño padding para alinear con el scrollbar */
+    
+}
+
+.carrito-actions-footer {
+    display: flex; /* Para poner los botones uno al lado del otro */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.carrito-actions-footer button {
+    flex: 1; /* Ambos botones ocuparán el mismo espacio disponible */
+    padding: 12px 15px; /* Más padding para botones de acción */
+    font-size: 1.1em;
+    margin-top: 0; /* Anula cualquier margin-top heredado */
+    border-radius: 5px; /* Bordes más redondeados */
+    /* Los colores específicos se definen para #vaciarCarrito y #comprar */
+    color: #F0F0F0; /* Texto claro por defecto para estos botones */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#vaciarCarrito {
+    background-color: #DC3545; /* Rojo para vaciar */
+}
+#vaciarCarrito:hover {
+    background-color: #C82333;
+}
+
+#comprar {
+    background-color: #28A745; /* Verde para comprar */
+}
+#comprar:hover {
+    background-color: #218838;
+}
+
+.formulario {
+    display: none; /* Se oculta por defecto y lo muestra el JS */
+    opacity: 0; /* Asegura que no sea visible */
+    transition: opacity 0.5s ease-in-out; /* Transición suave para la aparición */
+    max-width: 450px; /* Un poco más ancho para mejor visualización en escritorio */
+    margin: 40px auto; /* Más margen superior/inferior para separarlo de otros elementos */
+    background: #282828; /* Fondo oscuro (el mismo del carrito) */
+    padding: 30px; /* Más padding interno para un mejor espacioado */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada y oscura */
+    color: #F0F0F0; /* Texto claro en el formulario */
+    border: 1px solid #3A3A3A; /* Borde sutil para definirlo mejor */
+}
+
+/* Cuando la clase 'oculto' se quita (desde tu JS), el formulario se muestra */
+.formulario:not(.oculto) {
+    display: block; /* O display: flex si quieres controlar su contenido con flexbox */
+    opacity: 1; /* Lo hace visible */
+}
+
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 25px; /* Más espacio debajo del título principal */
+    font-size: 2em; /* Título más grande */
+    color: #00CED1; /* Color de acento Turquesa para el título */
+    text-shadow: 0 0 8px rgba(0, 206, 209, 0.4); /* Pequeña sombra de texto turquesa */
+}
+
+.formulario h3 {
+    color: #B0B0B0; /* Gris claro para subtítulos/instrucciones */
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.formulario label { /* Estilo para las etiquetas de los campos si las usas */
+    display: block; /* Para que cada label ocupe su propia línea */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #F0F0F0; /* Texto claro */
+}
+
+.formulario input {
+    width: calc(100% - 20px); /* Ancho del 100% menos el padding horizontal */
+    padding: 12px 10px; /* Más padding para inputs */
+    margin-bottom: 15px; /* Espacio debajo de cada input */
+    border-radius: 5px;
+    border: 1px solid #444; /* Borde más suave */
+    background-color: #333; /* Fondo de input oscuro */
+    color: #F0F0F0; /* Texto de input claro */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para enfoque */
+}
+.formulario input:focus {
+    outline: none; /* Eliminar el contorno por defecto del navegador */
+    border-color: #00CED1; /* Borde de acento Turquesa al enfocar */
+    box-shadow: 0 0 8px rgba(0, 206, 209, 0.6); /* Sombra de acento al enfocar */
+}
+
+.formulario button {
+    width: 100%;
+    padding: 15px; /* Más padding para el botón de envío */
+    margin-top: 25px; /* Más espacio superior para el botón */
+    font-size: 1.2em; /* Botón más grande */
+    background-color: #00CED1; /* Color de acento Turquesa para el botón de envío */
+    color: #1A1A1A; /* Texto oscuro en botón de acento */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 206, 209, 0.4); /* Sombra para el botón */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #00A3A5; /* Turquesa más oscuro al hover */
+    box-shadow: 0 6px 15px rgba(0, 206, 209, 0.6); /* Sombra más intensa al hover */
+}

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tienda Online - Electrónica</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script defer src="js/script.js" ></script>
+
+</head>
+<body>
+  <header>
+    <h1>Tienda Online - Electrónica</h1>
+    <button id="abrirCarrito">🛒</button>
+  </header>
+
+  <main>
+    <section id="contenedor-productos" class="productos">
+        
+    </section>
+  </main>
+
+  <!-- CARRITO LATERAL -->
+   
+  <aside id="carritoLateral" class="carrito">
+
+    <button id="cerrarCarrito">✖</button>
+    
+    <h2>Tu Carrito</h2>
+        <div id="carrito-items"></div>
+         <p>
+            Total: $<span id="carrito-total">0</span>
+        </p>
+            <div class="carrito-footer">
+                <div class="carrito-actions-footer">
+                <button id="vaciarCarrito">Vaciar Carrito</button>
+                <button id="comprar">Comprar</button>
+            </div>
+        </div>
+  </aside>
+
+  <!--  Formulario     -->
+
+<div class="formulario oculto">
+  <h3>Datos del Cliente</h3>
+  <form id="form-cliente">
+    <input type="text" id="nombre" placeholder="Nombre completo" required autocomplete="name" />
+    <input type="email" id="email" placeholder="Correo electrónico" required autocomplete="email" />
+    <input type="tel" id="telefono" placeholder="Teléfono" required autocomplete="1122334455" />
+    <button type="submit">Enviar</button>
+  </form>
+    <button type="button" id="cerrarFormulario">Cancelar</button> </div>
+
+</div>  
+
+</body>
+</html>

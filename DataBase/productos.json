@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mouse Gamer RGB Ultraligero",
+    "precio": 12500,
+    "imagen": "images/mouse_gamer_rgb.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Teclado Mecánico RGB Redragon",
+    "precio": 18000,
+    "imagen": "images/teclado_mecanico_rgb.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Auriculares Gamer HyperX Cloud Stinger",
+    "precio": 15000,
+    "imagen": "images/auriculares_hyperx.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor Gamer Curvo 24'' 144Hz",
+    "precio": 95000,
+    "imagen": "images/monitor_gamer_curvo.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Procesador Intel Core i5-12400F",
+    "precio": 130000,
+    "imagen": "images/procesador_i5.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Memoria RAM DDR4 16GB (2x8GB) 3200MHz",
+    "precio": 45000,
+    "imagen": "images/memoria_ram_16gb.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Placa de Video NVIDIA RTX 3060 12GB",
+    "precio": 350000,
+    "imagen": "images/placa_video_rtx3060.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Gabinete Gamer ATX con Vidrio Templado",
+    "precio": 30000,
+    "imagen": "images/gabinete_gamer.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Disco SSD M.2 NVMe 1TB Kingston",
+    "precio": 60000,
+    "imagen": "images/ssd_nvme_1tb.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Fuente de Alimentación 750W 80 Plus Gold",
+    "precio": 55000,
+    "imagen": "images/fuente_750w.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Webcam Full HD con Micrófono",
+    "precio": 10000,
+    "imagen": "images/webcam_hd.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Parlantes 2.0 Genius SP-HF500A",
+    "precio": 9000,
+    "imagen": "images/parlantes_genius.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Joystick Inalámbrico para PC/PS4",
+    "precio": 13000,
+    "imagen": "images/joystick_inalambrico.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Router Wi-Fi 6 Doble Banda TP-Link",
+    "precio": 28000,
+    "imagen": "images/router_wifi6.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "Impresora Multifunción Epson EcoTank L3150",
+    "precio": 120000,
+    "imagen": "images/impresora_epson.jpg"
+  },
+  {
+    "id": 16,
+    "nombre": "Tablet Android 10'' Samsung Galaxy Tab A8",
+    "precio": 220000,
+    "imagen": "images/tablet_samsung.jpg"
+  },
+  {
+    "id": 17,
+    "nombre": "Pendrive USB 3.0 64GB SanDisk",
+    "precio": 8000,
+    "imagen": "images/pendrive_64gb.jpg"
+  },
+  {
+    "id": 18,
+    "nombre": "Smart TV 4K 50'' Samsung Crystal UHD",
+    "precio": 450000,
+    "imagen": "images/smart_tv_50.jpg"
+  },
+  {
+    "id": 19,
+    "nombre": "Auriculares Bluetooth In-Ear JBL Wave Buds",
+    "precio": 20000,
+    "imagen": "images/auriculares_jbl.jpg"
+  },
+  {
+    "id": 20,
+    "nombre": "Cargador Rápido USB-C 20W para Celular",
+    "precio": 7000,
+    "imagen": "images/cargador_usb_c.jpg"
+  }
+]
