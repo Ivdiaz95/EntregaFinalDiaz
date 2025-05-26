@@ -17,7 +17,7 @@ abrirCarrito.addEventListener("click", () => carritoLateral.classList.add("activ
 cerrarCarrito.addEventListener("click", () => carritoLateral.classList.remove("activo"));
  
 // Cargar productos desde JSON
-fetch("../DataBase/productos.json")
+fetch("./DataBase/productos.json")
   .then(res => res.json())
   .then(data => mostrarProductos(data))
   .catch(err => console.error("Error al cargar productos:", err));
